@@ -1,6 +1,6 @@
 --[[
 الالعاب ل سورس مصطفى
-تم تعديل الملف واضافه الالعاب من قبل مصطفى (@FOZA817)
+تم تعديل الملف واضافه الالعاب من قبل مصطفى (@alone_kurdish)
 --]]
 local function games(msg,MsgText)
 if msg.type ~= "pv" then
