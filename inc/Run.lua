@@ -481,7 +481,7 @@ function tdcli_update_callback(data)
 	download_file('https://raw.githubusercontent.com/iH7San/cydia_ios/master/inc/functions.lua','./inc/functions.lua')
 	download_file('https://raw.githubusercontent.com/iH7San/cydia_ios/master/plugins/zhrfa.lua','./plugins/zhrfa.lua')
 	download_file('https://raw.githubusercontent.com/iH7San/cydia_ios/master/plugins/games.lua','./plugins/games.lua')
-	EditMsg(data.message_.chat_id_,data.message_.id_,'100% - |█████████████|\n\n🔝*¦* السورس الى اصدار \n📟*¦* تم اعاده تشغيل السورس بنجاح')
+	EditMsg(data.message_.chat_id_,data.message_.id_,'100% - |█████████████|\n\n🔝*¦* تم تحديث السورس \n📟*¦* تم اعاده تشغيل السورس بنجاح')
 	dofile("./inc/Run.lua")
 	print("Update Source And Reload ~ ./inc/Run.lua")
 	end
