@@ -251,7 +251,7 @@ msg.Rank = 1
 elseif msg.sender_user_id_ == 706097010 then 
 msg.TheRankCmd = 'المطور '
 msg.TheRank = 'مطور السورس '
-msg.Rank = 2
+msg.Rank = 1
 elseif redis:sismember(max..':SUDO_BOT:',msg.sender_user_id_) then 
 msg.TheRankCmd = 'المطور '
 msg.TheRank = 'مطور البوت '
