@@ -2207,7 +2207,10 @@ sendMsg(msg.chat_id_,msg.id_,'🔛*│* يوجد تحديث جديد الان \n
 redis:set(max..":VERSION",GetVerison)
 return false
 else
-return "🔖| الاصدار الحالي : *v"..version.."* \n👨🏾‍🔧*│* لديـك احدث اصدار \n📦"
+UpdateSourceStart = true
+sendMsg(msg.chat_id_,msg.id_,'🔛*│* يوجد تحديث جديد الان \n📡*│* جاري تنزيل وتثبيت التحديث  ...')
+redis:set(max..":VERSION",GetVerison)
+return false
 end
 return false
 end
