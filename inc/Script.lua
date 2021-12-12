@@ -2268,8 +2268,8 @@ end
 if (MsgText[1]== "ايدي" or MsgText[1]=="ايديي🆔") and msg.type == "pv" then return  "\n👨🏻‍💻│اهلن عزيزي المطور ايديك هوه ⏬\n\n🧟‍♂│"..msg.sender_user_id_.."\n"  end
 
 if MsgText[1]== "قناة السورس 📡" and msg.type == "pv" then
-local inline = {{{text="⚜│قناه السـورس ضـغـط هنا ",url="https://t.me/adnanrefaeii2"}}}
-send_key(msg.sender_user_id_,'  [⚜│قناة سورس : مصطفى](https://t.me/adnanrefaeii2)',nil,inline,msg.id_)
+local inline = {{{text="⚜│قناه السـورس ضـغـط هنا ",url="https://t.me/tweakjailbreak"}}}
+send_key(msg.sender_user_id_,'  [⚜│قناة سورس : مصطفى](https://t.me/tweakjailbreak)',nil,inline,msg.id_)
 return false
 end
 
