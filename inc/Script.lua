@@ -136,6 +136,8 @@ end
 
 
 local function imax(msg,MsgText)
+if msg.type == 'pv' then return end
+
 if msg.type ~= 'pv' then
 
 if MsgText[1] == "تفعيل" and not MsgText[2] then
